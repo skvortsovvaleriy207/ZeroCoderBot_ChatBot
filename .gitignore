@@ -1,0 +1,23 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+venv/
+.env
+
+# Telethon
+*.session
+*.session-journal
+
+# Database
+*.db
+
+# OS
+.DS_Store
+
+# IDE
+.idea/
+.vscode/
+
+# Temp
+temp/
