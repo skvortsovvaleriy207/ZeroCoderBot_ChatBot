@@ -3,6 +3,8 @@
 Этот проект состоит из двух частей:
 1.  **Telethon Script** (`telethon/`): Собирает сообщения из Telegram чатов в базу данных.
 2.  **Summary Bot** (`ChatBot/`): Мониторит базу данных и присылает краткие выжимки (суммаризацию) новых сообщений через GigaChat.
+3.  **Flask Dashboard** (`flask/`): Веб-интерфейс для просмотра статистики и истории сообщений.
+4.  **Mini App** (`miniapp/`): Отдельное Flask-приложение с независимым функционалом.
 
 ## Требования
 
@@ -41,6 +43,22 @@
         pip install -r requirements.txt
         ```
 
+    *   **Flask Dashboard**:
+        ```bash
+        cd flask
+        python3 -m venv venv
+        source venv/bin/activate
+        pip install -r requirements.txt
+        ```
+
+    *   **Mini App**:
+        ```bash
+        cd miniapp
+        python3 -m venv venv
+        source venv/bin/activate
+        pip install -r requirements.txt
+        ```
+
 ## Запуск
 
 Для работы системы нужно запустить оба компонента в разных терминалах.
@@ -64,7 +82,27 @@ cd ChatBot
 ./venv/bin/python bot.py
 ```
 
-### 3. Использование
+### 3. Запуск веб-дашборда (Flask)
+
+Веб-интерфейс для просмотра статистики.
+
+```bash
+cd flask
+./venv/bin/python app.py
+```
+*   Откройте в браузере: `http://127.0.0.1:5001`
+
+### 4. Запуск Mini App
+
+Отдельное приложение.
+
+```bash
+cd miniapp
+./venv/bin/python app.py
+```
+*   Откройте в браузере: `http://127.0.0.1:5001` (порт может отличаться, проверьте вывод консоли)
+
+### 5. Использование
 
 1.  Откройте вашего бота в Telegram.
 2.  Отправьте команду `/start`.

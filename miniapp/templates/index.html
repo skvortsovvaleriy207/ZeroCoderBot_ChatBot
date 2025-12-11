@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Обзор статистики</h1>
+<div class="dashboard-grid">
+    <div class="card">
+        <h3>Всего сообщений</h3>
+        <div class="value">{{ total_messages }}</div>
+        <div class="sub-text">Получено за все время</div>
+    </div>
+    <div class="card">
+        <h3>Проанализировано</h3>
+        <div class="value">{{ analyzed_messages }}</div>
+        <div class="sub-text">Обработано нейросетью</div>
+    </div>
+    <div class="card">
+        <h3>Последняя выжимка</h3>
+        <div class="value" style="font-size: 1.5rem; line-height: 3rem;">
+            {% if last_analyzed_date %}
+            {{ last_analyzed_date }}
+            {% else %}
+            Нет данных
+            {% endif %}
+        </div>
+        <div class="sub-text">Дата и время</div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,4 @@
+Traceback (most recent call last):
+  File "/home/skvortsovvaleriy207/Proect/Python/ZeroCoderBot/flask/app.py", line 3, in <module>
+    from flask import Flask, render_template, g
+ModuleNotFoundError: No module named 'flask'

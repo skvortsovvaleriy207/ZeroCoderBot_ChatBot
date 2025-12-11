@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Список сообщений</h1>
+<div class="table-container">
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Дата</th>
+                <th>Отправитель</th>
+                <th>Чат</th>
+                <th>Текст</th>
+                <th>Статус</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for message in messages %}
+            <tr>
+                <td>{{ message.id }}</td>
+                <td>{{ message.date }}</td>
+                <td>{{ message.sender }}</td>
+                <td>{{ message.chat_title }}</td>
+                <td title="{{ message.text }}">
+                    {{ message.text[:100] }}{% if message.text|length > 100 %}...{% endif %}
+                </td>
+                <td>
+                    {% if message.is_summarized %}
+                    <span class="status-badge status-analyzed">Готово</span>
+                    {% else %}
+                    <span class="status-badge status-pending">Ожидание</span>
+                    {% endif %}
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}
